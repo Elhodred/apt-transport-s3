@@ -888,14 +888,14 @@ void HttpMethod::SendReq(FetchItem *Itm,CircleBuf &Out)
    {
       // In this case we send an if-range query with a range header
       sprintf(Buf,"Range: bytes=%li-\r\nIf-Range: %s\r\n",(long)SBuf.st_size - 1,
-	      TimeRFC1123(SBuf.st_mtime).c_str());
+	      TimeRFC1123(SBuf.st_mtime, false).c_str());
       Req += Buf;
    }
    else
    {
       if (Itm->LastModified != 0)
       {
-	 sprintf(Buf,"If-Modified-Since: %s\r\n",TimeRFC1123(Itm->LastModified).c_str());
+	 sprintf(Buf,"If-Modified-Since: %s\r\n",TimeRFC1123(Itm->LastModified, false).c_str());
 	 Req += Buf;
       }
    }
