@@ -23,3 +23,11 @@
 *.i*86
 *.x86_64
 *.hex
+
+# This project
+debian/.debhelper
+debian/apt-transport-s3
+debian/apt-transport-s3.debhelper.log
+s3
+debian/apt-transport-s3.substvars
+debian/files
