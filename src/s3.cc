@@ -908,7 +908,7 @@ void HttpMethod::SendReq(FetchItem *Itm,CircleBuf &Out)
    time_t rawtime = 0;
    struct tm * timeinfo = NULL;
    char formated_time [80] = { 0 };
-   char buffer [80] = { 0 };
+   char buffer [256] = { 0 };
    char* wday = NULL;
    char* month = NULL;
 
